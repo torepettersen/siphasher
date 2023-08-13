@@ -1,8 +1,4 @@
-defmodule SiphasherTest do
+defmodule SipHasherTest do
   use ExUnit.Case
-  doctest Siphasher
-
-  test "greets the world" do
-    assert Siphasher.hello() == :world
-  end
+  doctest SipHasher
 end

@@ -1,0 +1,14 @@
+[package]
+name = "siphasher"
+version = "0.1.0"
+authors = []
+edition = "2021"
+
+[lib]
+name = "siphasher"
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+rustler = "0.29.1"
+siphasher = "0.3.10"
