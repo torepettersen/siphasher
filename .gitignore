@@ -24,3 +24,6 @@ siphasher-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+# Rust binary
+priv/native/libsiphasher.so
