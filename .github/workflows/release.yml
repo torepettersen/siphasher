@@ -17,7 +17,9 @@ jobs:
       fail-fast: false
       matrix:
         nif:
-          - "2.16"
+          # see: https://github.com/erlang/otp/blob/master/erts/emulator/beam/erl_nif.h
+          - "2.16" # OTP 24, OTP 25
+          - "2.17" # OTP 26
         job:
           - { target: arm-unknown-linux-gnueabihf , os: ubuntu-20.04 , use-cross: true }
           - { target: aarch64-unknown-linux-gnu   , os: ubuntu-20.04 , use-cross: true }
