@@ -2,7 +2,7 @@
 
 Elixir Bindings for the SipHash Algorithm
 
-This module provides Elixir bindings to the Rust library [siphasher](https://crates.io/crates/siphasher)',
+This module provides Elixir bindings to the Rust library [siphasher](https://crates.io/crates/siphasher),
 offering the SipHash 2-4 algorithm.
 
 SipHash is a versatile hashing function known for its speed and strong
