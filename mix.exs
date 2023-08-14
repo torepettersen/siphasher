@@ -10,6 +10,7 @@ defmodule Siphasher.MixProject do
       version: @version,
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
+      description: description(),
       deps: deps(),
       package: package(),
     ]
@@ -31,15 +32,22 @@ defmodule Siphasher.MixProject do
     ]
   end
 
+  defp description do
+    "Elixir Bindings for the SipHash Algorithm"
+  end
+
   defp package do
     [
-      files: [
-        "lib",
-        "native",
-        "checksum-*.exs",
-        "mix.exs",
-        "LICENSE"
-      ],
+      files: ~w(
+        lib
+        native/siphasher/src
+        native/siphasher/Cargo.*
+        native/siphasher/.cargo
+        checksum-*.exs
+        mix.exs
+        LICENSE
+        README.md
+      ),
       licenses: ["MIT"],
       links: %{"GitHub" => @source_url},
       maintainers: ["Tore Pettersen"]
