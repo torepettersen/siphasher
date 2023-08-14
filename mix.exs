@@ -1,13 +1,17 @@
 defmodule Siphasher.MixProject do
   use Mix.Project
 
+  @source_url "https://github.com/torepettersen/siphasher"
+  @version "0.1.0"
+
   def project do
     [
       app: :siphasher,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package(),
     ]
   end
 
@@ -21,7 +25,23 @@ defmodule Siphasher.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler, "~> 0.29.1"}
+      {:rustler, ">= 0.0.0", optional: true},
+      {:rustler_precompiled, "~> 0.6"},
+    ]
+  end
+
+  defp package do
+    [
+      files: [
+        "lib",
+        "native",
+        "checksum-*.exs",
+        "mix.exs",
+        "LICENSE"
+      ],
+      licenses: ["MIT"],
+      links: %{"GitHub" => @source_url},
+      maintainers: ["Tore Pettersen"]
     ]
   end
 end
