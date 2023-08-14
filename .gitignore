@@ -27,3 +27,6 @@ siphasher-*.tar
 
 # Rust binary
 priv/native/libsiphasher.so
+
+# Local build
+checksum-*.exs
