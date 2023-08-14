@@ -27,6 +27,7 @@ defmodule Siphasher.MixProject do
     [
       {:rustler, ">= 0.0.0", optional: true},
       {:rustler_precompiled, "~> 0.6"},
+      {:ex_doc, "~> 0.30.2", only: [:dev, :test]}
     ]
   end
 

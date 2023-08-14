@@ -2,7 +2,7 @@ defmodule SipHasher do
   @moduledoc """
   Elixir Bindings for the SipHash Algorithm
 
-  This module provides Elixir bindings to the Rust library 'siphasher',
+  This module provides Elixir bindings to the Rust library [siphasher](https://crates.io/crates/siphasher),
   offering the SipHash 2-4 algorithm.
 
   SipHash is a versatile hashing function known for its speed and strong
@@ -34,14 +34,14 @@ defmodule SipHasher do
 
   ## Examples
 
-    iex> SipHasher.hash("0123456789ABCDEF", "hello")
-    {:ok, 4402678656023170274}
+      iex> SipHasher.hash("0123456789ABCDEF", "hello")
+      {:ok, 4402678656023170274}
 
-    iex> SipHasher.hash("invalid_bytes", "hello")
-    {:error, "Key must be exactly 16 bytes!"}
+      iex> SipHasher.hash("invalid_bytes", "hello")
+      {:error, "Key must be exactly 16 bytes!"}
 
-    iex> SipHasher.hash("0123456789ABCDEF", 123)
-    {:error, "Hash input must be a binary!"}
+      iex> SipHasher.hash("0123456789ABCDEF", 123)
+      {:error, "Hash input must be a binary!"}
   """
   @spec hash(binary(), binary()) :: {:ok, number()} | {:error, binary()}
   def hash(key, input) when byte_size(key) == 16 and is_binary(input) do
@@ -75,14 +75,14 @@ defmodule SipHasher do
 
   ## Examples
 
-    iex> SipHasher.hash!("0123456789ABCDEF", "hello")
-    4402678656023170274
+      iex> SipHasher.hash!("0123456789ABCDEF", "hello")
+      4402678656023170274
 
-    iex> SipHasher.hash!("invalid_bytes", "hello")
-    ** (ArgumentError) Key must be exactly 16 bytes!
+      iex> SipHasher.hash!("invalid_bytes", "hello")
+      ** (ArgumentError) Key must be exactly 16 bytes!
 
-    iex> SipHasher.hash!("0123456789ABCDEF", 123)
-    ** (ArgumentError) Hash input must be a binary!
+      iex> SipHasher.hash!("0123456789ABCDEF", 123)
+      ** (ArgumentError) Hash input must be a binary!
   """
   @spec hash!(binary(), binary()) :: number()
   def hash!(key, input) do
