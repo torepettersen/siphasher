@@ -18,6 +18,7 @@ jobs:
       matrix:
         nif:
           # see: https://github.com/erlang/otp/blob/master/erts/emulator/beam/erl_nif.h
+          - "2.15" # OTP 22, OTP 23
           - "2.16" # OTP 24, OTP 25
           - "2.17" # OTP 26
         job:
